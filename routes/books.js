@@ -113,6 +113,9 @@ const express = require('express');
 const router = express.Router();
 const bookController = require('../controllers/Bookcontrollers');
 
+app.get('/', (req, res) => {
+    res.status(200).send('Book collection');
+});
 // Get all books
 router.get('/', bookController.getAllBooks);
 
