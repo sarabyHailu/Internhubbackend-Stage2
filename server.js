@@ -2,14 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const connectDB = require('./config/db');
 require('dotenv').config();
-
+const booksRoutes=require('./routes/books')
 const app = express();
 connectDB();
 
 app.use(bodyParser.json());
 
 // Routes
-app.use('/books', require('./routes/books'));
+app.use('/books',booksRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 5000;
