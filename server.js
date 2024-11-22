@@ -9,6 +9,9 @@ connectDB();
 app.use(bodyParser.json());
 
 // Routes
+app.get('/', (req, res) => {
+    res.status(200).send('Book collection');
+});
 app.use('/books',booksRoutes);
 
 // Start the server
